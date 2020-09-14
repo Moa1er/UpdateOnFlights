@@ -1,0 +1,2 @@
+Class of a disabled button = "datepicker-day-button day disabled"
+Class of an enabled button = "datepicker-day-button day range-start selected"
