@@ -22,8 +22,8 @@ url = 'https://www.flylevel.com/'
 classEnabled = "datepicker-day-button day range-start selected"
 classDisabled = "datepicker-day-button day disabled"
 
-#browser = webdriver.Chrome(executable_path='/usr/bin/chromedriver')
-browser = webdriver.Chrome(executable_path='/home/miameme/Downloads/chromedriver')
+browser = webdriver.Chrome(executable_path='/usr/bin/chromedriver')
+#browser = webdriver.Chrome(executable_path='/home/miameme/Downloads/chromedriver')
 browser.get(url)
 
 content = requests.get(url)
