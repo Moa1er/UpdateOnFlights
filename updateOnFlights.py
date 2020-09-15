@@ -22,8 +22,8 @@ url = 'https://www.flylevel.com/'
 classEnabled = "datepicker-day-button day range-start selected"
 classDisabled = "datepicker-day-button day disabled"
 
-browser = webdriver.Chrome(executable_path='/usr/bin/chromedriver')
-#browser = webdriver.Chrome(chromedriver)
+#browser = webdriver.Chrome(executable_path='/usr/bin/chromedriver')
+browser = webdriver.Chrome(executable_path='/home/miameme/Downloads/chromedriver')
 browser.get(url)
 
 content = requests.get(url)
@@ -81,3 +81,4 @@ triggerMenuDate()                  #OK
 triggerNextMonths()                #OK en full screen...
 connectMail()                      #OK
 isAvailable()                      #OK mais bon pas tres clean on va pas se le cacher
+browser.quit()
