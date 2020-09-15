@@ -15,13 +15,15 @@ import datetime
 
 import smtplib
 from email.mime.multipart import MIMEMultipart
+from email.message import EmailMessage
 
 url = 'https://www.flylevel.com/'
 
 classEnabled = "datepicker-day-button day range-start selected"
 classDisabled = "datepicker-day-button day disabled"
 
-browser = webdriver.Chrome(executable_path='/home/miameme/Downloads/chromedriver')
+browser = webdriver.Chrome(executable_path='/usr/bin/chromedriver')
+#browser = webdriver.Chrome(chromedriver)
 browser.get(url)
 
 content = requests.get(url)
@@ -61,16 +63,17 @@ def connectMail():
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login("aghines.gasselin@gmail.com", "Ag-elpatro1")
+    server.login("aghines.gasselin@gmail.com", "dx&334@3##ojQ!")
 
 def sendEmail(etatVol) :
     global message
-    message = MIMEMultipart()
+    message = EmailMessage()
+    message.set_content(etatVol)
     message['Subject'] = 'Update availability of level\'s flights'
     message['From'] = 'aghines.gasselin@gmail.com'
     message['to'] = 'twoswaglol.law@gmail.com'
 
-    server.sendmail('aghines.gasselin@gmail.com', 'twoswaglol.law@gmail.com', etatVol)
+    server.send_message(message)
 
 triggerMenuDestination()           #OK
 arrival_country_chooser("Paris")   #OK
