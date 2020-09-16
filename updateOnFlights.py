@@ -5,10 +5,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.keys import Keys
 
-from bs4 import BeautifulSoup # BeautifulSoup is in bs4 package 
+#from bs4 import BeautifulSoup # BeautifulSoup is in bs4 package 
 import requests
 
-import pandas as pd
+#import pandas as pd
 
 import time
 import datetime
@@ -22,12 +22,11 @@ url = 'https://www.flylevel.com/'
 classEnabled = "datepicker-day-button day range-start selected"
 classDisabled = "datepicker-day-button day disabled"
 
-browser = webdriver.Chrome(executable_path='/usr/bin/chromedriver')
-#browser = webdriver.Chrome(executable_path='/home/miameme/Downloads/chromedriver')
+#browser = webdriver.Chrome(executable_path='/usr/bin/chromedriver')
+browser = webdriver.Chrome(executable_path='/home/miameme/Downloads/chromedriver')
 browser.get(url)
 
 content = requests.get(url)
-soup = BeautifulSoup(content.text, 'html.parser')
 
 def triggerMenuDestination():
     browser.find_element_by_xpath("//app-flight-input[@class='searcher-input destination separator']").click()
