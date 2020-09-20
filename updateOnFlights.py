@@ -52,6 +52,7 @@ def triggerNextMonths():
 
 def isAvailable():
     available = browser.find_elements_by_xpath("//span[@class='datepicker-day-button day disabled']")
+
     if len(available) < 62 :
         sendEmail("ALERTE ROUGE, ALERTE ROUGE, ceci n'est pas un exercice.")
     else :
