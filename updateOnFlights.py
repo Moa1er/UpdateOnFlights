@@ -22,8 +22,8 @@ url = 'https://www.flylevel.com/'
 classEnabled = "datepicker-day-button day range-start selected"
 classDisabled = "datepicker-day-button day disabled"
 
-#browser = webdriver.Chrome(executable_path='/usr/bin/chromedriver')
-browser = webdriver.Chrome(executable_path='/home/miameme/Downloads/chromedriver')
+browser = webdriver.Chrome(executable_path='/usr/bin/chromedriver')
+#browser = webdriver.Chrome(executable_path='/home/miameme/Downloads/chromedriver')
 browser.get(url)
 
 content = requests.get(url)
@@ -54,7 +54,7 @@ def isAvailable():
     available = browser.find_elements_by_xpath("//span[@class='datepicker-day-button day disabled']")
 
     if len(available) < 62 :
-        sendEmail("ALERTE ROUGE, ALERTE ROUGE, ceci n'est pas un exercice.")
+        sendEmail("ALERTE ROUGE, ROUGEE")
     else :
         sendEmail("ALERTE... GREEN LOL")
 
