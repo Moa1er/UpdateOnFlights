@@ -22,8 +22,8 @@ url = 'https://www.flylevel.com/'
 classEnabled = "datepicker-day-button day range-start selected"
 classDisabled = "datepicker-day-button day disabled"
 
-#browser = webdriver.Chrome(executable_path='/usr/bin/chromedriver')
-browser = webdriver.Chrome(executable_path='/home/miameme/Downloads/chromedriver')
+browser = webdriver.Chrome(executable_path='/usr/bin/chromedriver')
+#browser = webdriver.Chrome(executable_path='/home/miameme/Downloads/chromedriver')
 browser.get(url)
 
 content = requests.get(url)
@@ -54,7 +54,7 @@ def isAvailable():
     available = browser.find_elements_by_xpath("//span[@class='datepicker-day-button day disabled']")
 
     if len(available) < 62 :
-        sendEmail("ALERTE ROUGE, ALERTE ROUGE, ceci n'est pas un exercice.")
+        sendEmail("ALERTE ROUGE, ROUGEE")
     else :
         sendEmail("ALERTE... GREEN LOL")
 
@@ -63,15 +63,15 @@ def connectMail():
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login("aghines.gasselin@gmail.com", "dx&334@3##ojQ!")
+    server.login("hahahatuascrucetaitmonmail@gmail.com", "modDePasseLol")
 
 def sendEmail(etatVol) :
     global message
     message = EmailMessage()
     message.set_content(etatVol)
     message['Subject'] = 'Update availability of level\'s flights'
-    message['From'] = 'aghines.gasselin@gmail.com'
-    message['to'] = 'twoswaglol.law@gmail.com'
+    message['From'] = 'hahahatuascrucetaitmonmail@gmail.com'
+    message['to'] = 'hahahatuascrucetaitmonmail@gmail.com'
 
     server.send_message(message)
 
