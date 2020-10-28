@@ -63,15 +63,15 @@ def connectMail():
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login("aghines.gasselin@gmail.com", "dx&334@3##ojQ!")
+    server.login("hahahatuascrucetaitmonmail@gmail.com", "modDePasseLol")
 
 def sendEmail(etatVol) :
     global message
     message = EmailMessage()
     message.set_content(etatVol)
     message['Subject'] = 'Update availability of level\'s flights'
-    message['From'] = 'aghines.gasselin@gmail.com'
-    message['to'] = 'twoswaglol.law@gmail.com'
+    message['From'] = 'hahahatuascrucetaitmonmail@gmail.com'
+    message['to'] = 'hahahatuascrucetaitmonmail@gmail.com'
 
     server.send_message(message)
 
