@@ -10,8 +10,8 @@ import pprint
 import time
 
 
-uName = "twoswaglol.law@gmail.com"
-pwd = "YmuKXOIPnhAfit8y"
+uName = "daam@gmail.com"
+pwd = "maislol"
 
 url = 'https://freebitco.in'
 
